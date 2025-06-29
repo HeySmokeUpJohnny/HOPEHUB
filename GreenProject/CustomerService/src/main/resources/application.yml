@@ -1,0 +1,73 @@
+server:
+  port: 8078
+spring:
+  application:
+    name: CustomerService
+  profiles:
+    active: prod
+  config:
+    import: optional:configserver:http://localhost:8071
+  datasource:
+    url: jdbc:mysql://localhost:3307/customerservicedb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: always
+
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      access: unrestricted
+    health:
+      probes:
+        enabled: true
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  info:
+    env:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+
+
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+info:
+  app:
+    name: "customerservice"
+    description: "Green Project AuthService"
+    version: "1.0.0"
+
+
+
+
+
+
+
+

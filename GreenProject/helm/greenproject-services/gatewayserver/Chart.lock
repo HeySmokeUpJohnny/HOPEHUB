@@ -1,0 +1,6 @@
+dependencies:
+- name: greenproject-common
+  repository: file://../../greenproject-common
+  version: 0.1.0
+digest: sha256:94f9b9c53791c6bdaecb462267b17f2d38282da7aca7d77762f75ed2949687e4
+generated: "2025-06-05T15:20:52.000651+03:00"

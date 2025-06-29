@@ -1,0 +1,40 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: OrderService
+  rabbitmq:
+      host: localhost    # veya docker kullanıyorsan 'rabbitmq'
+      port: 5672
+      username: guest
+      password: guest
+
+  devtools:
+    restart:
+      enabled: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3304/orderservicedb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+

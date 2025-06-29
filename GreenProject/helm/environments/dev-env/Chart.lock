@@ -1,0 +1,15 @@
+dependencies:
+- name: greenproject-common
+  repository: file://../../greenproject-common
+  version: 0.1.0
+- name: configserver
+  repository: file://../../greenproject-services/configserver
+  version: 0.1.0
+- name: authservice
+  repository: file://../../greenproject-services/authservice
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../greenproject-services/gatewayserver
+  version: 0.1.0
+digest: sha256:577e667511e82ccc67392952d66a2facb048688c4c9f75b67eb3df74dfb0b960
+generated: "2025-06-07T14:45:20.772308+03:00"
